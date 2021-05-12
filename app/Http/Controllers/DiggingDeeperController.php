@@ -103,7 +103,7 @@ class DiggingDeeperController extends Controller
         $newItemLast = $collection->push($newItem2)->last(); //додали в кінець
         $pulledItem = $collection->pull(1); //забрали з першим ключем
 
-        //dd(compact('collection', 'newItemFirst' , 'newItemLast', 'pulledItem'));
+        dd(compact('collection', 'newItemFirst' , 'newItemLast', 'pulledItem'));
 
         //Фільтрація
         $filtered = $collection->filter(function ($item) {

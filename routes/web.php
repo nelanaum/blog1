@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DiggingDeeperController;
 use App\Http\Controllers\RestTestController;
 
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'digging_deeper'], function () {
+
+    Route::get('collections', [DiggingDeeperController::class, 'collections'])
+
+        ->name('digging_deeper.collections');
+
+});
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
